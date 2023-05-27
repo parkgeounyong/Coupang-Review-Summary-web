@@ -1,24 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <title>My Webpage</title>
+<meta charset="utf-8">
+<title>My Webpage</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+input[type="URL"] {
+  width: 300px;
+  padding: 5px;
+}
+
+button {
+  padding: 8px 15px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#output {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#output p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.bot-message {
+  background-color: #e1ffc7;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+.user-message {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+</style>
 </head>
 <body>
-  <main>
-    <section>
-      <h2>쿠팡 후기 요약</h2>
-      <form>
-        <label for="URL">URL:</label>
-        <input type="URL" id="URL" name="URL" required>
-        <button id="submit">Submit</button>
-      </form>
-    </section>
-    <section>
-      <h2>후기 요약</h2>
-      <div id="output"></div>
-    </section>
-  </main>
-  <script src="../js/input.js"></script>
+<main>
+<section>
+<h2>Coupang Review Summary</h2>
+<form>
+<label for="URL">URL:</label>
+<input type="URL" id="URL" name="URL" required>
+<button id="submit">Submit</button>
+</form>
+</section>
+<section>
+<h2>Review Summary</h2>
+<div id="output"></div>
+</section>
+</main>
+<script src="../js/input.js"></script>
 </body>
 </html>

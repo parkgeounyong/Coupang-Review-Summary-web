@@ -4,7 +4,7 @@ from konlpy.tag import Okt
 from nltk import Text
 import matplotlib.pyplot as plt
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 def Tokenizer(text):

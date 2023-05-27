@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request, render_template
 from main import *
 
+#http://ip주소/html/chat.html로 접속
 app = Flask(__name__, static_folder='../web', static_url_path='/')
 
 @app.route('/process_url', methods=['POST'])
