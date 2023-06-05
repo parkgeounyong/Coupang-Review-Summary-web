@@ -1,10 +1,8 @@
 import openai
-import re
 from konlpy.tag import Okt
 from nltk import Text
-import matplotlib.pyplot as plt
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 
 def Tokenizer(text):
@@ -30,16 +28,15 @@ def Tokenizer(text):
 
 def extract_element(text):
     # 문장 요약
-    prompt = "$와$  사이에 있는 건 돼지 고기의 상태를 나타내는 형용사야. 해당 형용사로 후기를 작성해줘. 단, 아래의 지시사항을 참고해줘.\n\n1. 입력 언어: 한국어\n2. 출력언어: 한국어\n3. 스타일: 간결하게\n4. 독자 대상:구매자\n5. 답변 길이: utf-8 인코딩 기준 최대 100바이트\n6. 후기 카테고리: 돼지 고기\n7. 추가 지시사항:\n후기를 작성할 때 형용사는 반드시 포함하여 돼지 고기 후기를 작성해줘, 요약 형태로 작성해줘\n\n$"
+    prompt = "너는 쿠팡에서 판매되는 돼지 고기 상품에 대한 후기를 작성하는 돼지고기 소비자야. 돼지 고기 후기에서 추출한 형용사 중 가장 빈도수가 높은 5개 형용사를 사용하여, 한 문장으로 이루어진 돼지고기 맛에 대한 후기를 작성해보자. 매운맛과 관련된 문장이나 단어는 포함하지 않을 거야. 함께 한국어 문법에 맞는 문장으로 작성해보자. 그럼 step by step으로 진행해보자."
     top_adj = Tokenizer(text)
     prompt+="\n"
     for token in top_adj:
-        prompt += token+" "
-    prompt=prompt+"\n$"    
+        prompt += token+" " 
     completions = openai.Completion.create(
         model="text-davinci-003",
         prompt=prompt,
-        temperature=0.1,
+        temperature=0,
         max_tokens=256,
         top_p=1,
         frequency_penalty=0,

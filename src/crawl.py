@@ -1,9 +1,6 @@
 from bs4 import BeautifulSoup as bs
-from pathlib import Path
 from typing import Optional,Union,Dict,List
-from openpyxl import Workbook
 import time
-import os
 import re
 import requests as rq
 import json
@@ -14,7 +11,7 @@ def get_headers(
     default_value: Optional[str] = None
     )-> Dict[str,Dict[str,str]]:
     """ Get Headers """
-    JSON_FILE : str = 'server/json/headers.json'
+    JSON_FILE : str = 'json/headers.json'
     
     with open(JSON_FILE,'r',encoding='UTF-8') as file:
         headers : Dict[str,Dict[str,str]] = json.loads(file.read())
