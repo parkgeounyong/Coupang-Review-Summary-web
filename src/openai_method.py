@@ -2,7 +2,7 @@ import openai
 from konlpy.tag import Okt
 from nltk import Text
 
-openai.api_key = "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"
+openai.api_key = "input your openai code"
 
 
 def Tokenizer(text):
